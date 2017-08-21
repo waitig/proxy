@@ -103,6 +103,133 @@ $proxyUrl = $blogUrl . 'proxy/';
         <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="//cdn.staticfile.org/twitter-bootstrap/3.0.1/js/bootstrap.min.js"></script>
         <style>
+            .footbar {
+                min-height: 200px;
+                color: #ccc;
+                font-size: 13px;
+                position: relative;
+                z-index: 1;
+                background-color: #31353a;
+                background-image: -webkit-linear-gradient(top, #2c3746, #1c1c1d);
+                background-image: -moz-linear-gradient(top, #2c3746, #1c1c1d);
+                background-image: linear-gradient(top, #2c3746, #1c1c1d)
+            }
+
+            .footbar > ul {
+                max-width: 1226px;
+                margin: auto;
+                z-index: -1
+            }
+
+            .footbar ul {
+                list-style: none
+            }
+
+            .footbar ul > li {
+                width: 25%;
+                float: left
+            }
+
+            .footbar p.footbar-title {
+                border-bottom: solid 2px #f98a65
+            }
+
+            .footbar p.footbar-title1 {
+                background-color: #00b274;
+                background-image: -webkit-linear-gradient(top, #00b274, #00a46b);
+                background-image: -moz-linear-gradient(top, #00b274, #00a46b);
+                background-image: linear-gradient(top, #00b274, #00a46b)
+            }
+
+            .footbar p.footbar-title2 {
+                background-color: #0096d6;
+                background-image: -webkit-linear-gradient(top, #0096d6, #008ac6);
+                background-image: -moz-linear-gradient(top, #0096d6, #008ac6);
+                background-image: linear-gradient(top, #0096d6, #008ac6)
+            }
+
+            .footbar p.footbar-title3 {
+                background-color: #d75ba2;
+                background-image: -webkit-linear-gradient(top, #d75ba2, #c75496);
+                background-image: -moz-linear-gradient(top, #d75ba2, #c75496);
+                background-image: linear-gradient(top, #d75ba2, #c75496)
+            }
+
+            .footbar p.footbar-title4 {
+                background-color: #e9ac40;
+                background-image: -webkit-linear-gradient(top, #e9ac40, #d89f3b);
+                background-image: -moz-linear-gradient(top, #e9ac40, #d89f3b);
+                background-image: linear-gradient(top, #e9ac40, #d89f3b)
+            }
+
+            .footbar p {
+                width: 90%;
+                margin-right: 10%;
+                padding: 3% 0;
+                line-height: 18px;
+                font-size: 14px;
+                color: #fff;
+                text-transform: uppercase;
+                text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+                opacity: .9;
+                cursor: default;
+                -webkit-transition: opacity .4s;
+                -moz-transition: opacity .4s;
+                transition: opacity .4s
+            }
+
+            .footbar > ul > li ul li {
+                margin-left: 43px;
+                line-height: 1.8;
+                padding: 5px;
+                float: left;
+                margin: 2px;
+                background-color: #3a3a3a;
+                transition: all .2s ease-in-out 0s
+            }
+
+            .footbar > ul > li li:hover {
+                background-color: #000;
+                color: #fff !important;
+                padding: 9px;
+                cursor: pointer;
+                -moz-box-shadow: 3px 3px 22px #48e0d3;
+                -webkit-box-shadow: 3px 3px 22px #48e0d3;
+                box-shadow: 3px 3px 22px #48e0d3
+            }
+
+            .footbar > ul > li a {
+                color: #fff !important;
+                cursor: pointer
+            }
+
+            .footbar > ul > li > .footbar-span > a:hover {
+                background-color: #000;
+                color: #fff !important;
+                cursor: pointer;
+                -moz-box-shadow: 3px 3px 22px #48e0d3;
+                -webkit-box-shadow: 3px 3px 22px #48e0d3;
+                box-shadow: 3px 3px 22px #48e0d3;
+                padding: 9px
+            }
+
+            .footbar > ul > li li a:hover {
+                color: #fff !important
+            }
+
+            .footbar > ul > li li a {
+                text-decoration: none !important;
+                color: #a9a9a9 !important
+            }
+
+            .footbar .footbar-span {
+                text-align: justify
+            }
+
+            .footbar .footbar-span p {
+                text-align: justify
+            }
             .footer {
                 background: #000;
                 -webkit-box-shadow: 0 -5px 0 rgba(0, 0, 0, .1);
