@@ -354,7 +354,7 @@ $proxyUrl = './';
                     跳转到<input type="text" size="2" title="跳转到" style="height: 20px;margin: auto;" id="pageIndex"/>页
                     &nbsp;&nbsp;<input type="button" class="btn btn-primary btn-xs" value="跳转" onclick="gotoPage()">
                 </div>
-
+                <div id="SOHUCS" sid="proxy-changyan-div"></div>
             </div>
         </div>
     </div>
