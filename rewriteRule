@@ -1,0 +1,6 @@
+#BEGIN PROXY --重写规则，加到WordPress规则之前
+<IfModule mod_rewrite.c>
+RewriteRule ^proxy/proxy-([0-9]+)-([0-9]+)\.html$ proxy/index.php?type=$1&page=$2 [NC]
+RewriteRule ^proxy/proxy-([0-9]+)\.html$ proxy/index.php?type=$1
+</IfModule>
+#END PROXY
