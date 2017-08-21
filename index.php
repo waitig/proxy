@@ -90,7 +90,7 @@ $proxyList = $wpdb->get_results($wpdb->prepare(
 //$resultJson = json_encode($proxyList);
 $blogUrl = home_url('/');
 $blogName = get_option('blogname');
-$proxyUrl = $blogUrl . 'proxy/';
+$proxyUrl = './';
 ?>
     <!DOCTYPE html>
     <html lang="zh-CN">
