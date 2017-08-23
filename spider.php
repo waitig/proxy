@@ -44,9 +44,12 @@ $proxyRules = array(//#ip_list > tbody > tr:nth-child(2) > td:nth-child(1) > img
     'verification_time' => array('td:nth-child(10)', 'text')
 );
 $proxyDataList=[];
+$proxyData=getProxyData();
 for ($j = 0; $j < count($url); $j++) {
-    $data = QueryList::Query($url[$j], $proxyRules, '#ip_list tr')->data;
+    $html = getUrlHtml($url[$j],$proxyData->ip,$proxyData->port);
+    $data = QueryList::Query($html, $proxyRules, '#ip_list tr')->data;
     $proxyDataList=array_merge($proxyDataList,$data);
+    sleep(3);
 }
 insertIntoDB($proxyDataList);
 
@@ -87,3 +90,24 @@ VALUES ';
     echo 'Insert or update :' . $queryNum . '<br/>';
 }
 
+function getUrlHtml($url,$proxyHost,$proxyPort){
+    $snoopy = new Snoopy;
+    $snoopy->proxy_host = $proxyHost;
+    $snoopy->proxy_port = $proxyPort;
+    $snoopy->agent = "(compatible; MSIE 4.01; MSN 2.5; AOL 4.0; Windows 98)";
+    $snoopy->referer = "https://www.baidu.com";
+    $snoopy->fetch($url); //获取所有内容
+    //var_dump($snoopy->results);
+    return $snoopy->results; //显示结果
+}
+
+function getProxyData(){
+    global $wpdb;
+    $queryStr = '
+    SELECT ip,port FROM `wp_proxy` WHERE verification_time = (
+    SELECT max(verification_time) FROM wp_proxy WHERE anonymous=\'透明\');
+    ';
+    $proxyData = $wpdb->get_results($queryStr);
+    return $proxyData[0];
+    //var_dump($proxyData);
+}
